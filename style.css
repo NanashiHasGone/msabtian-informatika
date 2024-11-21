@@ -989,3 +989,132 @@ body.dark-mode .alasan-card p {
     box-shadow 0.3s ease,
     transform 0.3s ease;
 }
+
+/* Mobile Responsiveness */
+@media only screen and (max-width: 768px) {
+  /* Navbar Mobile */
+  .navbar {
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+
+  /* Hamburger Menu */
+  .hamburger-menu {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+  }
+
+  .hamburger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+
+  /* Responsive Sections */
+  .hero {
+    height: auto;
+    padding: 100px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 24px;
+  }
+
+  .informatika-content {
+    flex-direction: column;
+  }
+
+  .informatika-text, 
+  .informatika-image {
+    width: 100%;
+    text-align: center;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .materi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Ukuran Font Responsif */
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  /* Touch Friendly */
+  .cta-btn, 
+  .nav-links a,
+  .skill-card,
+  .video-card {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Tablet */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    width: 90%;
+  }
+}
