@@ -2,25 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Viewport Mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  
   <title>Informatika Masa Kini & Masa Depan</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1055/1055646.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
 </head>
 <body>
+   <!-- Hamburger Menu untuk Mobile -->
+   <div class="hamburger-menu" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
   <header>
     <nav class="navbar">
       <div class="container">
         <a href="#" class="logo">INFORMATIKA PROJEK</a>
         <ul class="nav-links">
-    <li><a href="#home">Beranda</a></li>
-    <li><a href="tentang-informatika">Materi</a></li>
-    <li><a href="#video-pembelajaran">Video Belajar</a></li>
-</ul>
-          
+          <li><a href="#home">Beranda</a></li>
+          <li><a href="#tentang-informatika">Materi</a></li>
+          <li><a href="#video-pembelajaran">Video Belajar</a></li>
         </ul>
         <button id="dark-mode-toggle" class="dark-mode-btn"></button>
       </div>
@@ -350,5 +361,21 @@
   </footer>
 
   <script src="script.js"></script>
+   <!-- Service Worker -->
+   <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(registration => {
+            console.log('Service Worker registered');
+          })
+          .catch(error => {
+            console.log('Service Worker registration failed:', error);
+          });
+      });
+    }
+  </script>
+</body>
+</html>
 </body>
 </html>
